@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-//import Webscreen
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
@@ -22,7 +21,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         window.delegate = self
-        window.backgroundColor = .black
 
         let frame = window.frame
         if frame.size.width < 1024 || frame.size.height < 768 {

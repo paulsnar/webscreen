@@ -8,6 +8,7 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate {
     override init?(frame: NSRect, isPreview: Bool) {
         super.init(frame: frame, isPreview: isPreview)
         
+        self.wantsLayer = true
         self.autoresizingMask = [.width, .height]
         self.autoresizesSubviews = true
         
@@ -38,6 +39,8 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate {
     
     override func startAnimation() {
         super.startAnimation()
+
+        self.layer?.backgroundColor = .black
 
         if let webView = self.webView {
             let url = URL(string: "https://5d025718.neocities.org/bounce.html?screensaver")!
