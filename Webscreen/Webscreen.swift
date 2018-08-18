@@ -2,7 +2,7 @@ import Foundation
 import ScreenSaver
 import WebKit
 
-class WebscreenView: ScreenSaverView {
+class WebscreenView: ScreenSaverView, WKNavigationDelegate {
     var webView: WKWebView?
     
     override init?(frame: NSRect, isPreview: Bool) {
@@ -24,14 +24,22 @@ class WebscreenView: ScreenSaverView {
         config.suppressesIncrementalRendering = false
         
         self.webView = WKWebView(frame: .zero, configuration: config)
+        if let webView = self.webView {
+            webView.navigationDelegate = self
+        }
+    }
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        if let webView = self.webView, webView.alphaValue < 1.0 {
+            let anim = webView.animator()
+            anim.alphaValue = 1.0
+        }
     }
     
     override func startAnimation() {
         super.startAnimation()
 
         if let webView = self.webView {
-            webView.frame = self.frame
-            
             let url = URL(string: "https://5d025718.neocities.org/bounce.html?screensaver")!
             let rq = URLRequest(
                 url: url,
@@ -48,8 +56,11 @@ class WebscreenView: ScreenSaverView {
                 webView.frame = intermediate.bounds
                 self.addSubview(intermediate)
             } else {
+                webView.frame = self.frame
                 self.addSubview(webView)
             }
+
+            webView.alphaValue = 0.0
         }
     }
     
@@ -57,17 +68,14 @@ class WebscreenView: ScreenSaverView {
         super.stopAnimation()
     }
     
-    func handleResize(bounds: NSRect) {
-        self.frame = bounds
-        self.bounds = bounds
-        if let webView = self.webView {
-            webView.frame = bounds
-        }
-    }
-    
     func resizeSubviews(_ oldSize: NSSize) {
         if let webView = self.webView {
-            webView.frame = self.bounds
+            var bounds = self.frame
+            if self.isPreview {
+                bounds = bounds.applying(
+                    CGAffineTransform.init(scaleX: 2, y: 2))
+            }
+            webView.frame = bounds
         }
     }
 }
