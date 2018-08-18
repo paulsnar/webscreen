@@ -23,6 +23,8 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate {
     func createWebview() {
         let config = WKWebViewConfiguration()
         config.suppressesIncrementalRendering = false
+//        config.allowsInlineMediaPlayback = false // not available on Mac?
+        config.mediaTypesRequiringUserActionForPlayback = .all
         
         self.webView = WKWebView(frame: .zero, configuration: config)
         if let webView = self.webView {
