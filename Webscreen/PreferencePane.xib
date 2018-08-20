@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="panel" destination="QvC-M9-y7g" id="TEG-0n-FmI"/>
                 <outlet property="panelContents" destination="EiT-Mj-1SZ" id="VVR-cl-2cS"/>
+                <outlet property="tableView" destination="Iic-qh-roF" id="4VS-7h-oMf"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -36,7 +37,7 @@
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="" width="373" minWidth="40" maxWidth="1000" id="j5T-Hh-9wQ">
+                                        <tableColumn identifier="url" width="373" minWidth="40" maxWidth="1000" id="j5T-Hh-9wQ">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="URL">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -69,7 +70,7 @@
                                                 </tableCellView>
                                             </prototypeCellViews>
                                         </tableColumn>
-                                        <tableColumn identifier="" width="105" minWidth="40" maxWidth="1000" id="e6h-wq-jbd">
+                                        <tableColumn identifier="duration" width="105" minWidth="40" maxWidth="1000" id="e6h-wq-jbd">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Duration">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -107,7 +108,7 @@
                             </subviews>
                         </clipView>
                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="G5a-6J-C1n">
-                            <rect key="frame" x="2" y="197" width="482" height="16"/>
+                            <rect key="frame" x="1" y="7" width="0.0" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="zqU-4G-XKr">

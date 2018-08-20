@@ -3,7 +3,8 @@ import ScreenSaver
 
 let PreferencesKeyAddressList = "conf.addresses"
 
-class WebscreenConfiguration: NSObject {
+class WebscreenConfiguration: NSObject, NSTableViewDataSource,
+    NSTableViewDelegate {
   let defaults: UserDefaults
   var addresses: [WebscreenAddress]
     
@@ -40,5 +41,35 @@ class WebscreenConfiguration: NSObject {
     self.defaults.set(addresses, forKey: PreferencesKeyAddressList)
   
     //self.defaults.synchronize()
+  }
+  
+  func numberOfRows(in tableView: NSTableView) -> Int {
+    return self.addresses.count
+  }
+  
+  func tableView(_ tableView: NSTableView,
+       viewFor column: NSTableColumn?,
+       row: Int) -> NSView? {
+    if let column = column {
+      let addr = self.addresses[row]
+      
+      let view = tableView.makeView(
+        withIdentifier: column.identifier, owner: self) as! NSTableCellView
+      
+      switch column.identifier.rawValue {
+      case "url":
+        view.textField!.stringValue = "\(addr.url)"
+        
+      case "duration":
+        view.textField!.stringValue = "\(addr.displayDuration)"
+      
+      default:
+        fatalError("requested unknown column \(column.identifier)")
+      }
+      
+      return view
+    }
+    
+    return nil
   }
 }

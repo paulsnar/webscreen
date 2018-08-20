@@ -4,7 +4,9 @@ import WebKit
 
 let WebscreenModuleName = "lv.paulsnar.Webscreen"
 
-class WebscreenView: ScreenSaverView, WKNavigationDelegate, PreferencePaneControllerDelegate {
+class WebscreenView: ScreenSaverView, WKNavigationDelegate,
+    PreferencePaneControllerDelegate {
+
   var webView: WKWebView
   var config: WebscreenConfiguration?
   
@@ -16,6 +18,10 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate, PreferencePaneContro
       if self.preferenceController == nil {
         self.preferenceController = PreferencePaneController.init()
         self.preferenceController?.delegate = self
+        if let config = self.config {
+          self.preferenceController!.tableView.dataSource = config
+          self.preferenceController!.tableView.delegate = config
+        }
       }
       return self.preferenceController!.panel
     }
