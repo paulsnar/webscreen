@@ -59,14 +59,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
   }
   
   @IBAction func handlePreferencesMenuItem(_ sender: Any) {
-    if let panel = self.screenSaverView?.configPanel.window {
-      self.window.beginSheet(panel,
-          completionHandler: self.handleConfigurationPaneFinished)
+    if let screenSaver = self.screenSaverView {
+      if let sheet = screenSaver.configureSheet {
+        self.window.beginSheet(sheet, completionHandler: nil)
+      }
     }
-  }
-
-  func handleConfigurationPaneFinished(_ with: NSApplication.ModalResponse) {
-    // TODO
   }
 }
 

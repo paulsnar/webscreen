@@ -32,6 +32,7 @@
                         </textFieldCell>
                         <connections>
                             <action selector="handleURLChanged:" target="-2" id="P7t-UE-sXN"/>
+                            <outlet property="delegate" destination="-2" id="wlB-7S-hl6"/>
                         </connections>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t3m-6p-ZoP">
@@ -49,6 +50,9 @@
                         <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HGb-Jj-kAT">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
                         </buttonCell>
                         <connections>
                             <action selector="handleCloseClicked:" target="-2" id="HCx-lo-5sk"/>
@@ -56,6 +60,9 @@
                     </button>
                 </subviews>
             </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="EPZ-WI-89K"/>
+            </connections>
             <point key="canvasLocation" x="139" y="71"/>
         </window>
     </objects>
