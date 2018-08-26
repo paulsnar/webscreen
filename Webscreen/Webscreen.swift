@@ -101,8 +101,16 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate, ConfigurationPanelDe
     self.loadURL(url)
   }
 
-  func configurationPanel(_: ConfigurationPanel, didClose: Void) {
-    self.configPanel = nil
+  func configurationPanel(_ panel: ConfigurationPanel, didClose: Void) {
+    if let sheetParent = panel.window!.sheetParent {
+      sheetParent.endSheet(panel.window!)
+    } else {
+      // ScreenSaver is showing its age a bit at this point because this should
+      // be done via window.sheetParent.endSheet(window) but the engine hasn't
+      // been updated to show the sheet over the window instead of over the
+      // application main window therefore we have to use the deprecated way :)
+      NSApplication.shared.endSheet(panel.window!)
+    }
   }
 
   func loadURL(_ url: URL) {
