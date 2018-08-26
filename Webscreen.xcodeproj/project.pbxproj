@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69714D272132F6F50087F6CE /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69714D262132F6F50087F6CE /* Configuration.swift */; };
+		69714D292132F81C0087F6CE /* ConfigurationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69714D282132F81C0087F6CE /* ConfigurationPanel.swift */; };
+		69714D2A2132F81C0087F6CE /* ConfigurationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69714D282132F81C0087F6CE /* ConfigurationPanel.swift */; };
+		69714D2F2132F86E0087F6CE /* ConfigurationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69714D2E2132F86E0087F6CE /* ConfigurationPanel.xib */; };
+		69714D302132F86E0087F6CE /* ConfigurationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69714D2E2132F86E0087F6CE /* ConfigurationPanel.xib */; };
+		69714D312132FCFF0087F6CE /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69714D262132F6F50087F6CE /* Configuration.swift */; };
 		6974B9632128532500C33EBD /* Webscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6974B9622128532500C33EBD /* Webscreen.swift */; };
 		6974B96D2128556200C33EBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6974B96C2128556200C33EBD /* AppDelegate.swift */; };
 		6974B96F2128556300C33EBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6974B96E2128556300C33EBD /* Assets.xcassets */; };
@@ -15,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		69714D262132F6F50087F6CE /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		69714D282132F81C0087F6CE /* ConfigurationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationPanel.swift; sourceTree = "<group>"; };
+		69714D2E2132F86E0087F6CE /* ConfigurationPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigurationPanel.xib; sourceTree = "<group>"; };
 		6974B9552128530E00C33EBD /* Webscreen.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Webscreen.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		6974B95C2128530E00C33EBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6974B9622128532500C33EBD /* Webscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webscreen.swift; sourceTree = "<group>"; };
@@ -67,6 +76,9 @@
 			children = (
 				6974B95C2128530E00C33EBD /* Info.plist */,
 				6974B9622128532500C33EBD /* Webscreen.swift */,
+				69714D262132F6F50087F6CE /* Configuration.swift */,
+				69714D282132F81C0087F6CE /* ConfigurationPanel.swift */,
+				69714D2E2132F86E0087F6CE /* ConfigurationPanel.xib */,
 			);
 			path = Webscreen;
 			sourceTree = "<group>";
@@ -179,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69714D2F2132F86E0087F6CE /* ConfigurationPanel.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6974B96F2128556300C33EBD /* Assets.xcassets in Resources */,
+				69714D302132F86E0087F6CE /* ConfigurationPanel.xib in Resources */,
 				6974B9722128556300C33EBD /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,6 +213,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6974B9632128532500C33EBD /* Webscreen.swift in Sources */,
+				69714D272132F6F50087F6CE /* Configuration.swift in Sources */,
+				69714D292132F81C0087F6CE /* ConfigurationPanel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +223,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6974B97A2128560700C33EBD /* Webscreen.swift in Sources */,
+				69714D312132FCFF0087F6CE /* Configuration.swift in Sources */,
 				6974B96D2128556200C33EBD /* AppDelegate.swift in Sources */,
+				69714D2A2132F81C0087F6CE /* ConfigurationPanel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

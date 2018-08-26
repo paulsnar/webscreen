@@ -4,10 +4,18 @@ import WebKit
 
 let WebscreenModuleName = "lv.paulsnar.Webscreen"
 
-class WebscreenView: ScreenSaverView, WKNavigationDelegate {
+class WebscreenView: ScreenSaverView, WKNavigationDelegate, ConfigurationPanelDelegate {
   var webView: WKWebView
+  var config: Configuration
   
-  override var hasConfigureSheet: Bool { get { return false } }
+  override var hasConfigureSheet: Bool { get { return true } }
+  override var configureSheet: NSWindow? {
+    get {
+      let configPanel = ConfigurationPanel.init()
+      configPanel.delegate = self
+      return configPanel.window
+    }
+  }
 
   override convenience init?(frame: NSRect, isPreview: Bool) {
     let defaults = ScreenSaverDefaults.init(
@@ -26,7 +34,9 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate {
     wkConfig.mediaTypesRequiringUserActionForPlayback = .all
   
     self.webView = WKWebView(frame: .zero, configuration: wkConfig)
-  
+
+    self.config = Configuration.init(withURL: nil)
+
     super.init(frame: frame, isPreview: isPreview)
   
     self.wantsLayer = true
@@ -53,7 +63,7 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate {
 
     self.layer?.backgroundColor = .black
 
-    let url = URL.init(string: "https://masu.p22.co/~paulsnar/bounce.php")!
+    let url = self.config.url
     let rq = URLRequest(
       url: url,
       cachePolicy: .reloadRevalidatingCacheData,
@@ -83,5 +93,13 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate {
         CGAffineTransform.init(scaleX: 2, y: 2))
     }
     self.webView.frame = bounds
+  }
+
+  func configurationPanel(_: ConfigurationPanel, didChangeURLTo url: URL, from: URL?) {
+    self.config.url = url
+  }
+
+  func configurationPanel(_: ConfigurationPanel, wasClosed: Void) {
+    // TODO
   }
 }

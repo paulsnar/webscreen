@@ -59,7 +59,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
   }
   
   @IBAction func handlePreferencesMenuItem(_ sender: Any) {
-    NSLog("opening preference sheet")
+    if let panel = self.screenSaverView?.configPanel.window {
+      self.window.beginSheet(panel,
+          completionHandler: self.handleConfigurationPaneFinished)
+    }
+  }
+
+  func handleConfigurationPaneFinished(_ with: NSApplication.ModalResponse) {
+    // TODO
   }
 }
 
