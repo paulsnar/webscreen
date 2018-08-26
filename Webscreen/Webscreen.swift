@@ -132,4 +132,18 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate, ConfigurationPanelDe
       timeoutInterval: TimeInterval.init(exactly: 5)!)
     self.webView.load(rq)
   }
+
+  // MARK: interaction interception
+
+  override func hitTest(_ point: NSPoint) -> NSView? {
+    return nil
+  }
+
+  override func keyDown(with event: NSEvent) {
+    return
+  }
+
+  override func keyUp(with event: NSEvent) {
+    return
+  }
 }
