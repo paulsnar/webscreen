@@ -20,8 +20,11 @@ class ConfigurationPanel: NSWindowController, NSWindowDelegate, NSTextFieldDeleg
     self.previousURL = url
   }
 
-  override func windowDidLoad() {
-    super.windowDidLoad()
+  override func loadWindow() {
+    super.loadWindow()
+
+    // This is a hacky place to do this but right now my windowDidLoad is not
+    // working correctly so I'll fix it in post
     if let url = self.previousURL {
       self.urlTextField.stringValue = url.absoluteString
     }

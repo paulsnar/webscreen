@@ -43,7 +43,7 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate, ConfigurationPanelDe
     //wkConfig.allowsInlineMediaPlayback = false // not available on Mac?
     wkConfig.mediaTypesRequiringUserActionForPlayback = .all
     self.webView = WKWebView(frame: .zero, configuration: wkConfig)
-    self.config = Configuration.init(withURL: nil)
+    self.config = Configuration.init(fromDefaults: defaults)
     super.init(frame: frame, isPreview: isPreview)
   
     self.wantsLayer = true
