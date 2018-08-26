@@ -4,28 +4,10 @@ import WebKit
 
 let WebscreenModuleName = "lv.paulsnar.Webscreen"
 
-class WebscreenView: ScreenSaverView, WKNavigationDelegate,
-    PreferencePaneControllerDelegate {
-
+class WebscreenView: ScreenSaverView, WKNavigationDelegate {
   var webView: WKWebView
-  var config: WebscreenConfiguration?
   
-  var preferenceController: PreferencePaneController?
-  
-  override var hasConfigureSheet: Bool { get { return true } }
-  override var configureSheet: NSWindow? {
-    get {
-      if self.preferenceController == nil {
-        self.preferenceController = PreferencePaneController.init()
-        self.preferenceController?.delegate = self
-        if let config = self.config {
-          self.preferenceController!.tableView.dataSource = config
-          self.preferenceController!.tableView.delegate = config
-        }
-      }
-      return self.preferenceController!.panel
-    }
-  }
+  override var hasConfigureSheet: Bool { get { return false } }
 
   override convenience init?(frame: NSRect, isPreview: Bool) {
     let defaults = ScreenSaverDefaults.init(
@@ -38,9 +20,6 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate,
   }
   
   init?(frame: NSRect, isPreview: Bool, withDefaults defaults: UserDefaults) {
-    self.config = WebscreenConfiguration.init(
-      fromUserDefaults: defaults)
-  
     let wkConfig = WKWebViewConfiguration()
     wkConfig.suppressesIncrementalRendering = false
     //wkConfig.allowsInlineMediaPlayback = false // not available on Mac?
@@ -74,7 +53,7 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate,
 
     self.layer?.backgroundColor = .black
 
-    let url = self.config!.addresses[0].url
+    let url = URL.init(string: "https://masu.p22.co/~paulsnar/bounce.php")!
     let rq = URLRequest(
       url: url,
       cachePolicy: .reloadRevalidatingCacheData,
@@ -104,9 +83,5 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate,
         CGAffineTransform.init(scaleX: 2, y: 2))
     }
     self.webView.frame = bounds
-  }
-  
-  func preferencePaneWillClose(_ notification: Notification) {
-    self.preferenceController = nil
   }
 }

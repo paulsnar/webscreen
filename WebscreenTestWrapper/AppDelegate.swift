@@ -59,9 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
   }
   
   @IBAction func handlePreferencesMenuItem(_ sender: Any) {
-    if let window = self.window, let screenSaverView = self.screenSaverView {
-      window.beginSheet(screenSaverView.configureSheet!, completionHandler: nil)
-    }
+    NSLog("opening preference sheet")
   }
 }
 
