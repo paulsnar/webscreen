@@ -10,6 +10,7 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate, ConfigurationPanelDe
   var configPanel: ConfigurationPanel?
 
   var configDirty = false
+  var animationStarted = false
 
   override var hasConfigureSheet: Bool { get { return true } }
   override var configureSheet: NSWindow? {
@@ -67,6 +68,14 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate, ConfigurationPanelDe
 
   override func startAnimation() {
     super.startAnimation()
+    if self.animationStarted {
+      // This is a bit hacky, but this shall fix System Preferences restarting
+      // animation upon basically every interaction imaginable, causing
+      // unnecessary reloading of the webview.
+      return
+    }
+    self.animationStarted = true
+
     self.layer?.backgroundColor = .black
 
     self.loadURL(self.config.url)
