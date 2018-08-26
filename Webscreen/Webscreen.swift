@@ -5,6 +5,7 @@ import WebKit
 let WebscreenModuleName = "lv.paulsnar.Webscreen"
 
 class WebscreenView: ScreenSaverView, WKNavigationDelegate, ConfigurationPanelDelegate {
+  var intermediate: NSView?
   var webView: WKWebView
   var config: Configuration
   var configPanel: ConfigurationPanel?
@@ -39,30 +40,36 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate, ConfigurationPanelDe
   }
 
   init?(frame: NSRect, isPreview: Bool, withDefaults defaults: UserDefaults) {
+    self.config = Configuration.init(fromDefaults: defaults)
+
     let wkConfig = WKWebViewConfiguration()
     wkConfig.suppressesIncrementalRendering = false
     //wkConfig.allowsInlineMediaPlayback = false // not available on Mac?
     wkConfig.mediaTypesRequiringUserActionForPlayback = .all
     self.webView = WKWebView(frame: .zero, configuration: wkConfig)
-    self.config = Configuration.init(fromDefaults: defaults)
+
     super.init(frame: frame, isPreview: isPreview)
-  
+
     self.wantsLayer = true
     self.autoresizingMask = [.width, .height]
     self.autoresizesSubviews = true
     self.webView.navigationDelegate = self
-  }
 
-  override func draw(_ rect: NSRect) {
-    super.draw(rect)
-    NSColor.black.setFill()
-    rect.fill()
+    if isPreview {
+      let intermediate = NSView.init(frame: .zero)
+      self.intermediate = intermediate
+      intermediate.addSubview(self.webView)
+      self.addSubview(intermediate)
+    } else {
+      self.addSubview(self.webView)
+    }
+
+    self.resizeSubviews(.zero)
   }
 
   func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
     if self.webView.alphaValue < 1.0 {
-      let anim = webView.animator()
-      anim.alphaValue = 1.0
+      self.webView.animator().alphaValue = 1.0
     }
   }
 
@@ -77,37 +84,28 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate, ConfigurationPanelDe
     self.animationStarted = true
 
     self.layer?.backgroundColor = .black
-
-    self.loadURL(self.config.url)
-
-    if self.isPreview {
-      // do a hack to scale the view to half of its actual size
-      let intermediate = NSView.init(frame: self.frame)
-      intermediate.bounds = self.frame.applying(
-        CGAffineTransform.init(scaleX: 2, y: 2))
-      intermediate.addSubview(self.webView)
-      self.webView.frame = intermediate.bounds
-      self.addSubview(intermediate)
-    } else {
-      self.webView.frame = self.frame
-      self.addSubview(self.webView)
-    }
-
     self.webView.alphaValue = 0.0
+    self.loadCurrentURL()
   }
 
   func resizeSubviews(_ oldSize: NSSize) {
-    var bounds = self.frame
+    let bounds = self.bounds
+    var transform = CGAffineTransform.identity
     if self.isPreview {
-      bounds = bounds.applying(
-        CGAffineTransform.init(scaleX: 2, y: 2))
+      transform = transform.scaledBy(x: 2, y: 2)
     }
-    self.webView.frame = bounds
+    let childBounds = bounds.applying(transform)
+
+    if let intermediate = self.intermediate {
+      intermediate.frame = bounds
+      intermediate.bounds = childBounds
+    }
+    self.webView.frame = childBounds
   }
 
   func configurationPanel(_: ConfigurationPanel, didChangeURLTo url: URL, from: URL?) {
     self.config.url = url
-    self.loadURL(url)
+    self.loadCurrentURL()
   }
 
   func configurationPanel(_ panel: ConfigurationPanel, didClose: Void) {
@@ -122,8 +120,10 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate, ConfigurationPanelDe
     }
   }
 
-  func loadURL(_ url: URL) {
-    self.webView.animator().alphaValue = 0.0
+  func loadCurrentURL() {
+    if self.webView.alphaValue > 0.0 {
+      self.webView.animator().alphaValue = 0.0
+    }
 
     let url = self.config.url
     let rq = URLRequest(
