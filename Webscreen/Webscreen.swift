@@ -67,11 +67,7 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate, ConfigurationPanelDe
     self.resizeSubviews(.zero)
   }
 
-  func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-    if self.webView.alphaValue < 1.0 {
-      self.webView.animator().alphaValue = 1.0
-    }
-  }
+  // MARK: - view handling
 
   override func startAnimation() {
     super.startAnimation()
@@ -103,6 +99,29 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate, ConfigurationPanelDe
     self.webView.frame = childBounds
   }
 
+  // MARK: - WKWebView web data manipulation
+
+  func loadCurrentURL() {
+    if self.webView.alphaValue > 0.0 {
+      self.webView.animator().alphaValue = 0.0
+    }
+
+    let url = self.config.url
+    let rq = URLRequest(
+      url: url,
+      cachePolicy: .reloadRevalidatingCacheData,
+      timeoutInterval: TimeInterval.init(exactly: 5)!)
+    self.webView.load(rq)
+  }
+
+  func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    if self.webView.alphaValue < 1.0 {
+      self.webView.animator().alphaValue = 1.0
+    }
+  }
+
+  // MARK: - configuration panel delegate
+
   func configurationPanel(_: ConfigurationPanel, didChangeURLTo url: URL, from: URL?) {
     self.config.url = url
     self.loadCurrentURL()
@@ -120,20 +139,7 @@ class WebscreenView: ScreenSaverView, WKNavigationDelegate, ConfigurationPanelDe
     }
   }
 
-  func loadCurrentURL() {
-    if self.webView.alphaValue > 0.0 {
-      self.webView.animator().alphaValue = 0.0
-    }
-
-    let url = self.config.url
-    let rq = URLRequest(
-      url: url,
-      cachePolicy: .reloadRevalidatingCacheData,
-      timeoutInterval: TimeInterval.init(exactly: 5)!)
-    self.webView.load(rq)
-  }
-
-  // MARK: interaction interception
+  // MARK: - interaction interception
 
   override func hitTest(_ point: NSPoint) -> NSView? {
     return nil
