@@ -45,7 +45,7 @@ static NSString* const kDefaultsKeyUrl = @"url";
 
   _url = [defaults stringForKey:kDefaultsKeyUrl];
   if (_url == nil) {
-    _url = @"https://masu.p22.co/~paulsnar/bounce.php";
+    _url = @"https://paulsnar.lv/experiments/slide";
     [defaults setObject:_url forKey:kDefaultsKeyUrl];
   }
   _defaults = defaults;
