@@ -7,43 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		69714D272132F6F50087F6CE /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69714D262132F6F50087F6CE /* Configuration.swift */; };
-		69714D292132F81C0087F6CE /* ConfigurationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69714D282132F81C0087F6CE /* ConfigurationPanel.swift */; };
-		69714D2A2132F81C0087F6CE /* ConfigurationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69714D282132F81C0087F6CE /* ConfigurationPanel.swift */; };
-		69714D2F2132F86E0087F6CE /* ConfigurationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69714D2E2132F86E0087F6CE /* ConfigurationPanel.xib */; };
-		69714D302132F86E0087F6CE /* ConfigurationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69714D2E2132F86E0087F6CE /* ConfigurationPanel.xib */; };
-		69714D312132FCFF0087F6CE /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69714D262132F6F50087F6CE /* Configuration.swift */; };
-		6974B9632128532500C33EBD /* Webscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6974B9622128532500C33EBD /* Webscreen.swift */; };
-		6974B96D2128556200C33EBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6974B96C2128556200C33EBD /* AppDelegate.swift */; };
-		6974B96F2128556300C33EBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6974B96E2128556300C33EBD /* Assets.xcassets */; };
-		6974B9722128556300C33EBD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6974B9702128556300C33EBD /* MainMenu.xib */; };
-		6974B97A2128560700C33EBD /* Webscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6974B9622128532500C33EBD /* Webscreen.swift */; };
+		69837DFE21D23ECB004A37B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69837DFD21D23ECB004A37B4 /* AppDelegate.m */; };
+		69837E0021D23ECB004A37B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69837DFF21D23ECB004A37B4 /* Assets.xcassets */; };
+		69837E0321D23ECB004A37B4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69837E0121D23ECB004A37B4 /* MainMenu.xib */; };
+		69837E0621D23ECB004A37B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69837E0521D23ECB004A37B4 /* main.m */; };
+		69837E0B21D23ED4004A37B4 /* WebscreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 699E909221D2354000693908 /* WebscreenView.m */; };
+		699E909121D2354000693908 /* WebscreenView.h in Headers */ = {isa = PBXBuildFile; fileRef = 699E909021D2354000693908 /* WebscreenView.h */; };
+		699E909321D2354000693908 /* WebscreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 699E909221D2354000693908 /* WebscreenView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		69714D262132F6F50087F6CE /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		69714D282132F81C0087F6CE /* ConfigurationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationPanel.swift; sourceTree = "<group>"; };
-		69714D2E2132F86E0087F6CE /* ConfigurationPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigurationPanel.xib; sourceTree = "<group>"; };
-		6974B9552128530E00C33EBD /* Webscreen.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Webscreen.saver; sourceTree = BUILT_PRODUCTS_DIR; };
-		6974B95C2128530E00C33EBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6974B9622128532500C33EBD /* Webscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webscreen.swift; sourceTree = "<group>"; };
-		6974B96A2128556200C33EBD /* WebscreenTestWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebscreenTestWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6974B96C2128556200C33EBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6974B96E2128556300C33EBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6974B9712128556300C33EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		6974B9732128556300C33EBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6974B9742128556300C33EBD /* WebscreenTestWrapper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebscreenTestWrapper.entitlements; sourceTree = "<group>"; };
+		69837DFA21D23ECB004A37B4 /* WebscreenAppWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebscreenAppWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69837DFC21D23ECB004A37B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		69837DFD21D23ECB004A37B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		69837DFF21D23ECB004A37B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69837E0221D23ECB004A37B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		69837E0421D23ECB004A37B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69837E0521D23ECB004A37B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		69837E0721D23ECB004A37B4 /* WebscreenAppWrapper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebscreenAppWrapper.entitlements; sourceTree = "<group>"; };
+		69837E0D21D24568004A37B4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		69837E0F21D24590004A37B4 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		699E908D21D2354000693908 /* Webscreen.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Webscreen.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		699E909021D2354000693908 /* WebscreenView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebscreenView.h; sourceTree = "<group>"; };
+		699E909221D2354000693908 /* WebscreenView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebscreenView.m; sourceTree = "<group>"; };
+		699E909421D2354000693908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6974B9512128530E00C33EBD /* Frameworks */ = {
+		69837DF721D23ECB004A37B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6974B9672128556200C33EBD /* Frameworks */ = {
+		699E908A21D2354000693908 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -53,69 +51,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6974B94B2128530E00C33EBD = {
+		69837DFB21D23ECB004A37B4 /* WebscreenAppWrapper */ = {
 			isa = PBXGroup;
 			children = (
-				6974B9572128530E00C33EBD /* Webscreen */,
-				6974B96B2128556200C33EBD /* WebscreenTestWrapper */,
-				6974B9562128530E00C33EBD /* Products */,
+				69837DFC21D23ECB004A37B4 /* AppDelegate.h */,
+				69837DFD21D23ECB004A37B4 /* AppDelegate.m */,
+				69837DFF21D23ECB004A37B4 /* Assets.xcassets */,
+				69837E0121D23ECB004A37B4 /* MainMenu.xib */,
+				69837E0421D23ECB004A37B4 /* Info.plist */,
+				69837E0521D23ECB004A37B4 /* main.m */,
+				69837E0721D23ECB004A37B4 /* WebscreenAppWrapper.entitlements */,
+			);
+			path = WebscreenAppWrapper;
+			sourceTree = "<group>";
+		};
+		69837E0C21D24567004A37B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69837E0F21D24590004A37B4 /* JavaScriptCore.framework */,
+				69837E0D21D24568004A37B4 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		699E908321D2354000693908 = {
+			isa = PBXGroup;
+			children = (
+				699E908F21D2354000693908 /* Webscreen */,
+				69837DFB21D23ECB004A37B4 /* WebscreenAppWrapper */,
+				699E908E21D2354000693908 /* Products */,
+				69837E0C21D24567004A37B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		6974B9562128530E00C33EBD /* Products */ = {
+		699E908E21D2354000693908 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6974B9552128530E00C33EBD /* Webscreen.saver */,
-				6974B96A2128556200C33EBD /* WebscreenTestWrapper.app */,
+				699E908D21D2354000693908 /* Webscreen.saver */,
+				69837DFA21D23ECB004A37B4 /* WebscreenAppWrapper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6974B9572128530E00C33EBD /* Webscreen */ = {
+		699E908F21D2354000693908 /* Webscreen */ = {
 			isa = PBXGroup;
 			children = (
-				6974B95C2128530E00C33EBD /* Info.plist */,
-				6974B9622128532500C33EBD /* Webscreen.swift */,
-				69714D262132F6F50087F6CE /* Configuration.swift */,
-				69714D282132F81C0087F6CE /* ConfigurationPanel.swift */,
-				69714D2E2132F86E0087F6CE /* ConfigurationPanel.xib */,
+				699E909021D2354000693908 /* WebscreenView.h */,
+				699E909221D2354000693908 /* WebscreenView.m */,
+				699E909421D2354000693908 /* Info.plist */,
 			);
 			path = Webscreen;
-			sourceTree = "<group>";
-		};
-		6974B96B2128556200C33EBD /* WebscreenTestWrapper */ = {
-			isa = PBXGroup;
-			children = (
-				6974B96C2128556200C33EBD /* AppDelegate.swift */,
-				6974B96E2128556300C33EBD /* Assets.xcassets */,
-				6974B9702128556300C33EBD /* MainMenu.xib */,
-				6974B9732128556300C33EBD /* Info.plist */,
-				6974B9742128556300C33EBD /* WebscreenTestWrapper.entitlements */,
-			);
-			path = WebscreenTestWrapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6974B9522128530E00C33EBD /* Headers */ = {
+		699E908821D2354000693908 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699E909121D2354000693908 /* WebscreenView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6974B9542128530E00C33EBD /* Webscreen */ = {
+		69837DF921D23ECB004A37B4 /* WebscreenAppWrapper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6974B95F2128530E00C33EBD /* Build configuration list for PBXNativeTarget "Webscreen" */;
+			buildConfigurationList = 69837E0821D23ECB004A37B4 /* Build configuration list for PBXNativeTarget "WebscreenAppWrapper" */;
 			buildPhases = (
-				6974B9502128530E00C33EBD /* Sources */,
-				6974B9512128530E00C33EBD /* Frameworks */,
-				6974B9522128530E00C33EBD /* Headers */,
-				6974B9532128530E00C33EBD /* Resources */,
+				69837DF621D23ECB004A37B4 /* Sources */,
+				69837DF721D23ECB004A37B4 /* Frameworks */,
+				69837DF821D23ECB004A37B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebscreenAppWrapper;
+			productName = WebscreenAppWrapper;
+			productReference = 69837DFA21D23ECB004A37B4 /* WebscreenAppWrapper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		699E908C21D2354000693908 /* Webscreen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 699E909721D2354000693908 /* Build configuration list for PBXNativeTarget "Webscreen" */;
+			buildPhases = (
+				699E908821D2354000693908 /* Headers */,
+				699E908921D2354000693908 /* Sources */,
+				699E908A21D2354000693908 /* Frameworks */,
+				699E908B21D2354000693908 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -123,51 +149,41 @@
 			);
 			name = Webscreen;
 			productName = Webscreen;
-			productReference = 6974B9552128530E00C33EBD /* Webscreen.saver */;
+			productReference = 699E908D21D2354000693908 /* Webscreen.saver */;
 			productType = "com.apple.product-type.bundle";
-		};
-		6974B9692128556200C33EBD /* WebscreenTestWrapper */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6974B9752128556300C33EBD /* Build configuration list for PBXNativeTarget "WebscreenTestWrapper" */;
-			buildPhases = (
-				6974B9662128556200C33EBD /* Sources */,
-				6974B9672128556200C33EBD /* Frameworks */,
-				6974B9682128556200C33EBD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = WebscreenTestWrapper;
-			productName = WebscreenTestWrapper;
-			productReference = 6974B96A2128556200C33EBD /* WebscreenTestWrapper.app */;
-			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6974B94C2128530E00C33EBD /* Project object */ = {
+		699E908421D2354000693908 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = paulsnar;
 				TargetAttributes = {
-					6974B9542128530E00C33EBD = {
-						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 0940;
-					};
-					6974B9692128556200C33EBD = {
-						CreatedOnToolsVersion = 9.4.1;
+					69837DF921D23ECB004A37B4 = {
+						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 0;
+							};
+							com.apple.HardenedRuntime = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
 						};
 					};
+					699E908C21D2354000693908 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 				};
 			};
-			buildConfigurationList = 6974B94F2128530E00C33EBD /* Build configuration list for PBXProject "Webscreen" */;
+			buildConfigurationList = 699E908721D2354000693908 /* Build configuration list for PBXProject "Webscreen" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -175,67 +191,62 @@
 				en,
 				Base,
 			);
-			mainGroup = 6974B94B2128530E00C33EBD;
-			productRefGroup = 6974B9562128530E00C33EBD /* Products */;
+			mainGroup = 699E908321D2354000693908;
+			productRefGroup = 699E908E21D2354000693908 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6974B9542128530E00C33EBD /* Webscreen */,
-				6974B9692128556200C33EBD /* WebscreenTestWrapper */,
+				699E908C21D2354000693908 /* Webscreen */,
+				69837DF921D23ECB004A37B4 /* WebscreenAppWrapper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6974B9532128530E00C33EBD /* Resources */ = {
+		69837DF821D23ECB004A37B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69714D2F2132F86E0087F6CE /* ConfigurationPanel.xib in Resources */,
+				69837E0021D23ECB004A37B4 /* Assets.xcassets in Resources */,
+				69837E0321D23ECB004A37B4 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6974B9682128556200C33EBD /* Resources */ = {
+		699E908B21D2354000693908 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6974B96F2128556300C33EBD /* Assets.xcassets in Resources */,
-				69714D302132F86E0087F6CE /* ConfigurationPanel.xib in Resources */,
-				6974B9722128556300C33EBD /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6974B9502128530E00C33EBD /* Sources */ = {
+		69837DF621D23ECB004A37B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6974B9632128532500C33EBD /* Webscreen.swift in Sources */,
-				69714D272132F6F50087F6CE /* Configuration.swift in Sources */,
-				69714D292132F81C0087F6CE /* ConfigurationPanel.swift in Sources */,
+				69837E0B21D23ED4004A37B4 /* WebscreenView.m in Sources */,
+				69837E0621D23ECB004A37B4 /* main.m in Sources */,
+				69837DFE21D23ECB004A37B4 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6974B9662128556200C33EBD /* Sources */ = {
+		699E908921D2354000693908 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6974B97A2128560700C33EBD /* Webscreen.swift in Sources */,
-				69714D312132FCFF0087F6CE /* Configuration.swift in Sources */,
-				6974B96D2128556200C33EBD /* AppDelegate.swift in Sources */,
-				69714D2A2132F81C0087F6CE /* ConfigurationPanel.swift in Sources */,
+				699E909321D2354000693908 /* WebscreenView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6974B9702128556300C33EBD /* MainMenu.xib */ = {
+		69837E0121D23ECB004A37B4 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6974B9712128556300C33EBD /* Base */,
+				69837E0221D23ECB004A37B4 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -243,7 +254,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6974B95D2128530E00C33EBD /* Debug */ = {
+		69837E0921D23ECB004A37B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WebscreenAppWrapper/WebscreenAppWrapper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G7526DGQ9J;
+				INFOPLIST_FILE = WebscreenAppWrapper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lv.paulsnar.WebscreenAppWrapper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		69837E0A21D23ECB004A37B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WebscreenAppWrapper/WebscreenAppWrapper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G7526DGQ9J;
+				INFOPLIST_FILE = WebscreenAppWrapper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lv.paulsnar.WebscreenAppWrapper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		699E909521D2354000693908 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -275,7 +322,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -294,14 +341,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
-		6974B95E2128530E00C33EBD /* Release */ = {
+		699E909621D2354000693908 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -333,7 +381,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -346,138 +394,72 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		6974B9602128530E00C33EBD /* Debug */ = {
+		699E909821D2354000693908 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = G7526DGQ9J;
 				INFOPLIST_FILE = Webscreen/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-					"${DT_TOOLCHAIN_DIR}/usr/lib/swift/macosx/",
-				);
-				LIBRARY_SEARCH_PATHS = "${DT_TOOLCHAIN_DIR}/usr/lib/swift/macosx/";
 				PRODUCT_BUNDLE_IDENTIFIER = lv.paulsnar.Webscreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				STRIP_SWIFT_SYMBOLS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
 		};
-		6974B9612128530E00C33EBD /* Release */ = {
+		699E909921D2354000693908 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = G7526DGQ9J;
 				INFOPLIST_FILE = Webscreen/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-					"${DT_TOOLCHAIN_DIR}/usr/lib/swift/macosx/",
-				);
-				LIBRARY_SEARCH_PATHS = "${DT_TOOLCHAIN_DIR}/usr/lib/swift/macosx/";
 				PRODUCT_BUNDLE_IDENTIFIER = lv.paulsnar.Webscreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				STRIP_SWIFT_SYMBOLS = YES;
-				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = saver;
-			};
-			name = Release;
-		};
-		6974B9762128556300C33EBD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = WebscreenTestWrapper/WebscreenTestWrapper.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = WebscreenTestWrapper/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = lv.paulsnar.WebscreenTestWrapper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		6974B9772128556300C33EBD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = WebscreenTestWrapper/WebscreenTestWrapper.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = WebscreenTestWrapper/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = lv.paulsnar.WebscreenTestWrapper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6974B94F2128530E00C33EBD /* Build configuration list for PBXProject "Webscreen" */ = {
+		69837E0821D23ECB004A37B4 /* Build configuration list for PBXNativeTarget "WebscreenAppWrapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6974B95D2128530E00C33EBD /* Debug */,
-				6974B95E2128530E00C33EBD /* Release */,
+				69837E0921D23ECB004A37B4 /* Debug */,
+				69837E0A21D23ECB004A37B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6974B95F2128530E00C33EBD /* Build configuration list for PBXNativeTarget "Webscreen" */ = {
+		699E908721D2354000693908 /* Build configuration list for PBXProject "Webscreen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6974B9602128530E00C33EBD /* Debug */,
-				6974B9612128530E00C33EBD /* Release */,
+				699E909521D2354000693908 /* Debug */,
+				699E909621D2354000693908 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6974B9752128556300C33EBD /* Build configuration list for PBXNativeTarget "WebscreenTestWrapper" */ = {
+		699E909721D2354000693908 /* Build configuration list for PBXNativeTarget "Webscreen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6974B9762128556300C33EBD /* Debug */,
-				6974B9772128556300C33EBD /* Release */,
+				699E909821D2354000693908 /* Debug */,
+				699E909921D2354000693908 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6974B94C2128530E00C33EBD /* Project object */;
+	rootObject = 699E908421D2354000693908 /* Project object */;
 }
