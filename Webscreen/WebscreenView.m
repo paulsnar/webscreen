@@ -32,8 +32,8 @@ static NSString* const kDefaultsKeyUrl = @"url";
 
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
-  NSUserDefaults* defaults = [ScreenSaverDefaults defaultsForModuleWithName:kWebscreenModuleName];
-  return [self initWithFrame:frame isPreview:isPreview withDefaults:defaults];
+  return [self initWithFrame:frame isPreview:isPreview
+    withDefaults:[ScreenSaverDefaults defaultsForModuleWithName:kWebscreenModuleName]];
 }
 
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview withDefaults:(NSUserDefaults*)defaults
@@ -162,6 +162,7 @@ static NSString* const kDefaultsKeyUrl = @"url";
   [self startAnimation];
 
   [_defaults setObject:current forKey:kDefaultsKeyUrl];
+  [_defaults synchronize];
 }
 
 - (void)configurationPanelWasClosed:(WSConfigurationPanel*)panel
