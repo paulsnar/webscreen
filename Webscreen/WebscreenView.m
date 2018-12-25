@@ -42,18 +42,18 @@ static NSString* const kDefaultsKeyUrl = @"url";
   if ( ! self) {
     return self;
   }
-  
+
   _url = [defaults stringForKey:kDefaultsKeyUrl];
   if (_url == nil) {
     _url = @"https://masu.p22.co/~paulsnar/bounce.php";
     [defaults setObject:_url forKey:kDefaultsKeyUrl];
   }
   _defaults = defaults;
-  
+
   self.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
   self.autoresizesSubviews = YES;
   self.wantsLayer = YES;
-  
+
   WKWebViewConfiguration* conf = [[WKWebViewConfiguration alloc] init];
   conf.suppressesIncrementalRendering = NO;
   conf.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAll;
@@ -67,9 +67,9 @@ static NSString* const kDefaultsKeyUrl = @"url";
   } else {
     [self addSubview:_webView];
   }
-  
+
   [self resizeSubviewsWithOldSize:NSZeroSize];
-  
+
   return self;
 }
 
@@ -80,10 +80,10 @@ static NSString* const kDefaultsKeyUrl = @"url";
     return;
   }
   _animationStarted = YES;
-  
+
   self.layer.backgroundColor = CGColorGetConstantColor(kCGColorBlack);
   _webView.alphaValue = 0.0;
-  
+
   NSURL *url = [NSURL URLWithString:_url];
   NSURLRequest *rq = [NSURLRequest requestWithURL:url];
   [_webView loadRequest:rq];
@@ -118,7 +118,7 @@ static NSString* const kDefaultsKeyUrl = @"url";
     transform = CGAffineTransformScale(transform, 2.0, 2.0);
   }
   CGRect childBounds = CGRectApplyAffineTransform(bounds, transform);
-  
+
   if (_intermediateView != nil) {
     _intermediateView.frame = bounds;
     _intermediateView.bounds = childBounds;
@@ -160,7 +160,7 @@ static NSString* const kDefaultsKeyUrl = @"url";
   _url = current;
   [self stopAnimation];
   [self startAnimation];
-  
+
   [_defaults setObject:current forKey:kDefaultsKeyUrl];
 }
 
@@ -171,7 +171,7 @@ static NSString* const kDefaultsKeyUrl = @"url";
   } else {
     [NSApplication.sharedApplication endSheet:panel.window];
   }
-  
+
   _confPanel = nil;
 }
 

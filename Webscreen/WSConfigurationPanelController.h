@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WSConfigurationPanelController : NSWindowController
   @property(nonatomic, strong) IBOutlet NSTextField *_urlField;
-  
+
   @property(nonatomic, strong) id<WSConfigurationDelegate> delegate;
 @end
 
