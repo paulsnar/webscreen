@@ -12,6 +12,9 @@
 @interface AppDelegate () <NSWindowDelegate>
 
 @property (weak) IBOutlet NSWindow *window;
+
+-(IBAction)handleConfigureAction:(id)sender;
+
 @end
 
 @implementation AppDelegate
@@ -55,9 +58,15 @@
   }
 }
 
-- (void) windowDidResize:(NSNotification *)notification
+- (void)windowDidResize:(NSNotification *)notification
 {
   
+}
+
+- (void)handleConfigureAction:(id)sender
+{
+  NSWindow* panel = _wv.configureSheet;
+  [self.window beginSheet:panel completionHandler:nil];
 }
 
 

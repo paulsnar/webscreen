@@ -12,6 +12,11 @@
 		69837E0321D23ECB004A37B4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69837E0121D23ECB004A37B4 /* MainMenu.xib */; };
 		69837E0621D23ECB004A37B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69837E0521D23ECB004A37B4 /* main.m */; };
 		69837E0B21D23ED4004A37B4 /* WebscreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 699E909221D2354000693908 /* WebscreenView.m */; };
+		69837E2121D25D1F004A37B4 /* WSConfigurationPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 69837E1E21D25D1F004A37B4 /* WSConfigurationPanel.h */; };
+		69837E2221D25D1F004A37B4 /* WSConfigurationPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69837E1F21D25D1F004A37B4 /* WSConfigurationPanel.m */; };
+		69837E2321D25D1F004A37B4 /* WSConfigurationPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69837E1F21D25D1F004A37B4 /* WSConfigurationPanel.m */; };
+		69837E2421D25D1F004A37B4 /* WSConfigurationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69837E2021D25D1F004A37B4 /* WSConfigurationPanel.xib */; };
+		69837E2521D25D1F004A37B4 /* WSConfigurationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69837E2021D25D1F004A37B4 /* WSConfigurationPanel.xib */; };
 		699E909121D2354000693908 /* WebscreenView.h in Headers */ = {isa = PBXBuildFile; fileRef = 699E909021D2354000693908 /* WebscreenView.h */; };
 		699E909321D2354000693908 /* WebscreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 699E909221D2354000693908 /* WebscreenView.m */; };
 /* End PBXBuildFile section */
@@ -25,8 +30,9 @@
 		69837E0421D23ECB004A37B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69837E0521D23ECB004A37B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		69837E0721D23ECB004A37B4 /* WebscreenAppWrapper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebscreenAppWrapper.entitlements; sourceTree = "<group>"; };
-		69837E0D21D24568004A37B4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		69837E0F21D24590004A37B4 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		69837E1E21D25D1F004A37B4 /* WSConfigurationPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSConfigurationPanel.h; sourceTree = "<group>"; };
+		69837E1F21D25D1F004A37B4 /* WSConfigurationPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSConfigurationPanel.m; sourceTree = "<group>"; };
+		69837E2021D25D1F004A37B4 /* WSConfigurationPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WSConfigurationPanel.xib; sourceTree = "<group>"; };
 		699E908D21D2354000693908 /* Webscreen.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Webscreen.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		699E909021D2354000693908 /* WebscreenView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebscreenView.h; sourceTree = "<group>"; };
 		699E909221D2354000693908 /* WebscreenView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebscreenView.m; sourceTree = "<group>"; };
@@ -68,8 +74,6 @@
 		69837E0C21D24567004A37B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				69837E0F21D24590004A37B4 /* JavaScriptCore.framework */,
-				69837E0D21D24568004A37B4 /* WebKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -99,6 +103,9 @@
 				699E909021D2354000693908 /* WebscreenView.h */,
 				699E909221D2354000693908 /* WebscreenView.m */,
 				699E909421D2354000693908 /* Info.plist */,
+				69837E1E21D25D1F004A37B4 /* WSConfigurationPanel.h */,
+				69837E1F21D25D1F004A37B4 /* WSConfigurationPanel.m */,
+				69837E2021D25D1F004A37B4 /* WSConfigurationPanel.xib */,
 			);
 			path = Webscreen;
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69837E2121D25D1F004A37B4 /* WSConfigurationPanel.h in Headers */,
 				699E909121D2354000693908 /* WebscreenView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +217,7 @@
 			files = (
 				69837E0021D23ECB004A37B4 /* Assets.xcassets in Resources */,
 				69837E0321D23ECB004A37B4 /* MainMenu.xib in Resources */,
+				69837E2521D25D1F004A37B4 /* WSConfigurationPanel.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69837E2421D25D1F004A37B4 /* WSConfigurationPanel.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +239,7 @@
 				69837E0B21D23ED4004A37B4 /* WebscreenView.m in Sources */,
 				69837E0621D23ECB004A37B4 /* main.m in Sources */,
 				69837DFE21D23ECB004A37B4 /* AppDelegate.m in Sources */,
+				69837E2321D25D1F004A37B4 /* WSConfigurationPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				699E909321D2354000693908 /* WebscreenView.m in Sources */,
+				69837E2221D25D1F004A37B4 /* WSConfigurationPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

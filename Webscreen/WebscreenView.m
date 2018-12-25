@@ -7,19 +7,22 @@
 //
 
 #import "WebscreenView.h"
+#import "WSConfigurationPanel.h"
 
 static NSString* const kWebscreenModuleName = @"lv.paulsnar.Webscreen";
 static NSString* const kDefaultsKeyUrl = @"url";
 
-@interface WebscreenView () <WKNavigationDelegate>
+@interface WebscreenView () <WKNavigationDelegate, WSConfigurationPanelDelegate>
 @end
 
 @implementation WebscreenView
 {
+  NSUserDefaults* _defaults;
   NSString* _url;
   NSView* _intermediateView;
   WKWebView* _webView;
   BOOL _animationStarted;
+  WSConfigurationPanel* _confPanel;
 }
 
 + (BOOL)performGammaFade
@@ -45,6 +48,7 @@ static NSString* const kDefaultsKeyUrl = @"url";
     _url = @"https://masu.p22.co/~paulsnar/bounce.php";
     [defaults setObject:_url forKey:kDefaultsKeyUrl];
   }
+  _defaults = defaults;
   
   self.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
   self.autoresizesSubviews = YES;
@@ -87,17 +91,23 @@ static NSString* const kDefaultsKeyUrl = @"url";
 
 - (void)stopAnimation
 {
-    [super stopAnimation];
+  [super stopAnimation];
+  _animationStarted = NO;
+  _webView.animator.alphaValue = 0.0;
 }
 
 - (BOOL)hasConfigureSheet
 {
-    return NO;
+  return YES;
 }
 
 - (NSWindow*)configureSheet
 {
-    return nil;
+  if (_confPanel == nil) {
+    _confPanel = [[WSConfigurationPanel alloc] initWithInitialURL:_url];
+    _confPanel.delegate = self;
+  }
+  return _confPanel.window;
 }
 
 - (void)resizeSubviewsWithOldSize:(NSSize)oldSize
@@ -141,6 +151,28 @@ static NSString* const kDefaultsKeyUrl = @"url";
     WKWebView* animator = [_webView animator];
     animator.alphaValue = 1.0;
   }
+}
+
+#pragma mark - configuration panel delegate
+
+- (void)configurationPanel:(WSConfigurationPanel*)panel urlFieldChangedFrom:(NSString*)old to:(NSString*)current
+{
+  _url = current;
+  [self stopAnimation];
+  [self startAnimation];
+  
+  [_defaults setObject:current forKey:kDefaultsKeyUrl];
+}
+
+- (void)configurationPanelWasClosed:(WSConfigurationPanel*)panel
+{
+  if (panel.window.sheetParent != nil) {
+    [panel.window.sheetParent endSheet:panel.window];
+  } else {
+    [NSApplication.sharedApplication endSheet:panel.window];
+  }
+  
+  _confPanel = nil;
 }
 
 @end
