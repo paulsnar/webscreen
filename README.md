@@ -13,7 +13,7 @@ WebView which doesn't have the sort of performance WKWebView can offer.
 * The default URL can be changed via the `WSDefaultURL` Info.plist property.
   Note that this is effective only for the first installation, because then
   the URL will be persisted to preference storage. If this Info.plist property
-  is changed, either a rebuild or a resigning is necessary -- the distributive
+  is changed, either a rebuild or a resigning is necessary – the distributive
   contains my code signature and that covers Info.plist.
 
 ## License
