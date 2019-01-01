@@ -34,19 +34,21 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
   self.window.delegate = self;
-  
+
   NSRect frame = self.window.frame;
   if (frame.size.width < 1024 || frame.size.height < 768) {
     NSRect target = NSMakeRect(frame.origin.x, frame.origin.y, 1024, 768);
     [self.window setFrame:target display:YES animate:YES];
   }
-  
+
   if (self.window.contentView != nil) {
     NSView* contentView = self.window.contentView;
+    NSBundle* ownBundle = [NSBundle bundleForClass:[AppDelegate class]];
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     _wv = [[WebscreenView alloc] initWithFrame:contentView.bounds
                                   isPreview:NO
-                                  withDefaults:defaults];
+                                  withDefaults:defaults
+                                  withInfoDictionary:[ownBundle infoDictionary]];
     [contentView addSubview:_wv];
     [_wv startAnimation];
   }
@@ -60,7 +62,7 @@
 
 - (void)windowDidResize:(NSNotification *)notification
 {
-  
+
 }
 
 - (void)handleConfigureAction:(id)sender

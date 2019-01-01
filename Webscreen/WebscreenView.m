@@ -11,6 +11,7 @@
 
 static NSString* const kWebscreenModuleName = @"lv.paulsnar.Webscreen";
 static NSString* const kDefaultsKeyUrl = @"url";
+static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
 
 @interface WebscreenView () <WKNavigationDelegate, WSConfigurationPanelDelegate>
 @end
@@ -32,11 +33,13 @@ static NSString* const kDefaultsKeyUrl = @"url";
 
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
+  NSBundle* ownBundle = [NSBundle bundleForClass:[WebscreenView class]];
   return [self initWithFrame:frame isPreview:isPreview
-    withDefaults:[ScreenSaverDefaults defaultsForModuleWithName:kWebscreenModuleName]];
+    withDefaults:[ScreenSaverDefaults defaultsForModuleWithName:kWebscreenModuleName]
+    withInfoDictionary:[ownBundle infoDictionary]];
 }
 
-- (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview withDefaults:(NSUserDefaults*)defaults
+- (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview withDefaults:(NSUserDefaults*)defaults withInfoDictionary:(NSDictionary*)plist
 {
   self = [super initWithFrame:frame isPreview:isPreview];
   if ( ! self) {
@@ -45,7 +48,7 @@ static NSString* const kDefaultsKeyUrl = @"url";
 
   _url = [defaults stringForKey:kDefaultsKeyUrl];
   if (_url == nil) {
-    _url = @"https://paulsnar.lv/experiments/slide";
+    _url = [plist valueForKey:kPlistDefaultUrlKey];
     [defaults setObject:_url forKey:kDefaultsKeyUrl];
   }
   _defaults = defaults;
