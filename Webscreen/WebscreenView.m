@@ -1,11 +1,3 @@
-//
-//  WebscreenView.m
-//  Webscreen
-//
-//  Created by paulsnar on 2018-12-25.
-//  Copyright © 2018 paulsnar. All rights reserved.
-//
-
 #import "WebscreenView.h"
 #import "WSConfigurationPanel.h"
 
