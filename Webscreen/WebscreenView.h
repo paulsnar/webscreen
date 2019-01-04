@@ -8,9 +8,10 @@
 
 @property(nonatomic, strong) id<WebscreenViewDelegate> delegate;
 
-- (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
-                 withDefaults:(NSUserDefaults*)defaults
-                 withInfoDictionary:(NSDictionary*)plist;
+- (instancetype)initWithFrame:(NSRect)frame
+    isPreview:(BOOL)isPreview
+    withDefaults:(NSUserDefaults*)defaults
+    withInfoDictionary:(NSDictionary*)plist;
 @end
 
 @protocol WebscreenViewDelegate <NSObject>

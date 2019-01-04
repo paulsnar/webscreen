@@ -33,12 +33,16 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
   NSBundle* ownBundle = [NSBundle bundleForClass:[WebscreenView class]];
-  return [self initWithFrame:frame isPreview:isPreview
+  return [self initWithFrame:frame
+    isPreview:isPreview
     withDefaults:[ScreenSaverDefaults defaultsForModuleWithName:kWebscreenModuleName]
     withInfoDictionary:[ownBundle infoDictionary]];
 }
 
-- (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview withDefaults:(NSUserDefaults*)defaults withInfoDictionary:(NSDictionary*)plist
+- (instancetype)initWithFrame:(NSRect)frame
+    isPreview:(BOOL)isPreview
+    withDefaults:(NSUserDefaults*)defaults
+    withInfoDictionary:(NSDictionary*)plist
 {
   self = [super initWithFrame:frame isPreview:isPreview];
   if ( ! self) {
