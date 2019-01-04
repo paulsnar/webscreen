@@ -240,13 +240,13 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
 - (void)injectWSKitScriptInUserContentController:
     (WKUserContentController*)userContentController
 {
-  NSBundle* bundle = [NSBundle mainBundle];
+  NSBundle* bundle = [NSBundle bundleForClass:[WebscreenView class]];
   NSString* scriptLocation = [bundle pathForResource:@"webscreen" ofType:@"js"];
   NSString* scriptSource = [NSString stringWithContentsOfFile:scriptLocation
       encoding:NSUTF8StringEncoding error:nil];
   WKUserScript* userScript = [[WKUserScript alloc]
       initWithSource:scriptSource
-      injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
+      injectionTime:WKUserScriptInjectionTimeAtDocumentStart
       forMainFrameOnly:YES];
 
   [userContentController addUserScript:userScript];
