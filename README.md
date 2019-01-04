@@ -8,6 +8,12 @@ WebView which doesn't have the sort of performance WKWebView can offer.
 [WKWebView]: https://developer.apple.com/documentation/webkit/wkwebview
 [WebViewScreenSaver]: https://github.com/liquidx/webviewscreensaver
 
+## Development
+
+For testing the WebscreenAppWrapper also allows mouse interaction and
+developer tools. The URL preference sheet is within the application
+preferences.
+
 ## WSKit
 
 Webscreen exposes a simple API to the running webpage, called WSKit. It is
