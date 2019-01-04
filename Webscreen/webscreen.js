@@ -72,9 +72,14 @@
     },
   }
 
+  var ETimeout = new Error('WSKit: configuration timeout'),
+      _config = { resolve: null, reject: null, resolved: false }
+
   window.WSKit = {
-    display: null,
-    totalDisplays: null,
+    configuration: new Promise(function(resolve, reject) {
+      _config.resolve = resolve
+      _config.reject = reject
+    }),
 
     addEventListener: function(name, listener, config) {
       config = config || { }
@@ -94,10 +99,14 @@
     },
   }
 
+  setTimeout(function() {
+    if ( ! _config.resolved) {
+      _config.reject(ETimeout)
+    }
+  }, 5000)
+
   WSKit.addEventListener('configure', function(ev) {
-    var config = ev.data
-    WSKit.display = config.display
-    WSKit.totalDisplays = config.totalDisplays
+    _config.resolve(ev.data)
   })
   window.webkit.messageHandlers.webscreen.postMessage('obtainconfiguration')
 })();
