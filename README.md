@@ -10,9 +10,9 @@ WebView which doesn't have the sort of performance WKWebView can offer.
 
 ## Development
 
-For testing the WebscreenAppWrapper also allows mouse interaction and
-developer tools. The URL preference sheet is within the application
-preferences.
+For developing your screensavers the WebscreenAppWrapper also allows
+mouse interaction and developer tools. The URL preference sheet is
+within the application preferences.
 
 ## WSKit
 
