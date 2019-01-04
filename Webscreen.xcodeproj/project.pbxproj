@@ -284,6 +284,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = G7526DGQ9J;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					WEBSCREEN_DEBUG,
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = WebscreenAppWrapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -429,6 +434,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = G7526DGQ9J;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					WEBSCREEN_DEBUG,
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = Webscreen/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				PRODUCT_BUNDLE_IDENTIFIER = lv.paulsnar.Webscreen;
