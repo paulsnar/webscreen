@@ -94,7 +94,7 @@
     },
   }
 
-  WSKit.addEventListener('configuration', function(ev) {
+  WSKit.addEventListener('configure', function(ev) {
     var config = ev.data
     WSKit.display = config.display
     WSKit.totalDisplays = config.totalDisplays
