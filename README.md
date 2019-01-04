@@ -8,20 +8,24 @@ WebView which doesn't have the sort of performance WKWebView can offer.
 [WKWebView]: https://developer.apple.com/documentation/webkit/wkwebview
 [WebViewScreenSaver]: https://github.com/liquidx/webviewscreensaver
 
-## Web-side API
+## WSKit
 
-There's a basic (currently read-only) API available within the screensaver
-web context. The global `WSKit` currently contains two useful properties:
+Webscreen exposes a simple API to the running webpage, called WSKit. It is
+currently very limited (and intended to remain so), but it does provide
+just enough additional information so the running webpage can adjust its
+behaviour appropriately.
 
-* `display` the 1-based index of the display the page is currently
-  displayed on.
-* `totalDisplays` the 1-based count of total displays attached to the machine
-  the screensaver's running on.
+Right now the only available property is `configuration` – a promise which
+resolves to an object containing two properties:
 
-Note that there are currently no limitations on what can access these
-properties, so if you're privacy-conscious and don't want to leak the
-information about how many monitors you have, perhaps version [1.12][] is
-better for you.
+* `display` is the 1-based index of the display this instance of Webscreen
+  is running on, and
+* `totalDisplays` is the number of displays on this computer.
+
+Currently the WSKit API is exposed to all pages loaded within Webscreen, so
+if there exists a privacy concern due to which you don't want to share your
+monitor count with the webpage. it's probably best to stick with version
+[1.12][] instead.
 
 [1.12]: https://github.com/paulsnar/webscreen/releases/tag/v1.12
 
