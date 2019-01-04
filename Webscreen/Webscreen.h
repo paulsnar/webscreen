@@ -1,6 +1,6 @@
 #ifndef Webscreen_h
 #define Webscreen_h
 
-//#define WEBSCREEN_DEBUG
+// To be filled..
 
 #endif /* ifndef Webscreen_h */
