@@ -5,7 +5,14 @@ static NSString* const kWebscreenModuleName = @"lv.paulsnar.Webscreen";
 static NSString* const kDefaultsKeyUrl = @"url";
 static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
 
-@interface WebscreenView () <WKNavigationDelegate, WSConfigurationPanelDelegate>
+@interface WebscreenView () <
+  WKNavigationDelegate,
+  WKScriptMessageHandler,
+  WSConfigurationPanelDelegate>
+
+- (void)injectWSKitScriptInUserContentController:
+    (WKUserContentController*)userContentController;
+
 @end
 
 @implementation WebscreenView
@@ -52,6 +59,18 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
   WKWebViewConfiguration* conf = [[WKWebViewConfiguration alloc] init];
   conf.suppressesIncrementalRendering = NO;
   conf.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAll;
+
+  WKUserContentController* userContentController =
+      [[WKUserContentController alloc] init];
+  [self injectWSKitScriptInUserContentController:userContentController];
+  [userContentController addScriptMessageHandler:self name:@"webscreen"];
+  conf.userContentController = userContentController;
+
+#ifdef WEBSCREEN_DEBUG
+  NSLog(@"[Webscreen] Debug mode on");
+  [conf.preferences setValue:@YES forKey:@"developerExtrasEnabled"];
+#endif
+
   _webView = [[WKWebView alloc] initWithFrame:frame configuration:conf];
   _webView.navigationDelegate = self;
 
@@ -67,6 +86,8 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
 
   return self;
 }
+
+#pragma mark - screensaver implementation
 
 - (void)startAnimation
 {
@@ -125,17 +146,60 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
 
 - (NSView*)hitTest:(NSPoint)point
 {
+#ifdef WEBSCREEN_DEBUG
+  return [super hitTest:point];
+#else
   return nil;
+#endif
 }
 
 - (void)keyDown:(NSEvent *)event
 {
-  return;
+#ifdef WEBSCREEN_DEBUG
+  [super keyDown:event];
+#endif
 }
 
 - (void)keyUp:(NSEvent *)event
 {
-  return;
+#ifdef WEBSCREEN_DEBUG
+  [super keyUp:event];
+#endif
+}
+
+- (void)mouseDown:(NSEvent *)event
+{
+#ifdef WEBSCREEN_DEBUG
+  [super mouseDown:event];
+#endif
+}
+
+- (void)mouseUp:(NSEvent *)event
+{
+#ifdef WEBSCREEN_DEBUG
+  [super mouseUp:event];
+#endif
+}
+
+- (void)mouseDragged:(NSEvent *)event
+{
+#ifdef WEBSCREEN_DEBUG
+  [super mouseDragged:event];
+#endif
+}
+
+- (void)mouseEntered:(NSEvent *)event
+{
+#ifdef WEBSCREEN_DEBUG
+  [super mouseEntered:event];
+#endif
+}
+
+- (void)mouseExited:(NSEvent *)event
+{
+#ifdef WEBSCREEN_DEBUG
+  [super mouseExited:event];
+#endif
 }
 
 #pragma mark - navigation delegate
@@ -169,6 +233,60 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
   }
 
   _confPanel = nil;
+}
+
+#pragma mark - WSKit implementation
+
+- (void)injectWSKitScriptInUserContentController:
+    (WKUserContentController*)userContentController
+{
+  NSBundle* bundle = [NSBundle mainBundle];
+  NSString* scriptLocation = [bundle pathForResource:@"webscreen" ofType:@"js"];
+  NSString* scriptSource = [NSString stringWithContentsOfFile:scriptLocation
+      encoding:NSUTF8StringEncoding error:nil];
+  WKUserScript* userScript = [[WKUserScript alloc]
+      initWithSource:scriptSource
+      injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
+      forMainFrameOnly:YES];
+
+  [userContentController addUserScript:userScript];
+}
+
+- (NSDictionary*)configForWSKit
+{
+  NSArray* screens = [NSScreen screens];
+  NSScreen* currentScreen = [NSScreen mainScreen];
+  return @{
+    @"display": [NSNumber numberWithUnsignedInteger:
+        [screens indexOfObject:currentScreen] + 1],
+    @"totalDisplays": [NSNumber numberWithUnsignedInteger:[screens count]],
+  };
+}
+
+- (void)userContentController:(WKUserContentController*)userContentController
+    didReceiveScriptMessage:(WKScriptMessage*)message
+{
+  // apparently message.name is the name passed to the registration function
+  // and message.body is the argument to the postMessage function in JS
+  // counterintuitive innit
+  NSString* messageName = message.body;
+
+  if ([messageName isEqualToString:@"obtainconfiguration"]) {
+    NSError *err;
+    NSDictionary* config = [self configForWSKit];
+    NSData *json = [NSJSONSerialization dataWithJSONObject:config
+        options:0 error:&err];
+    if ( ! json) {
+      NSLog(@"[Webscreen] WSKit configuration: error: %@",
+          err.localizedDescription);
+      return;
+    }
+
+    NSString* jsonStr = [NSString stringWithUTF8String:json.bytes];
+    NSString* invocation = [NSString stringWithFormat:
+      @"WSKit.dispatchEvent('configuration', %@);", jsonStr];
+    [_webView evaluateJavaScript:invocation completionHandler:nil];
+  }
 }
 
 @end

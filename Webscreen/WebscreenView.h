@@ -1,5 +1,6 @@
 #import <ScreenSaver/ScreenSaver.h>
 #import <WebKit/WebKit.h>
+#import "Webscreen.h"
 
 @protocol WebscreenViewDelegate;
 

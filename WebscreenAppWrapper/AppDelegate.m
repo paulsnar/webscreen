@@ -21,6 +21,9 @@
 
 - (void)applicationWillFinishLaunching:(NSNotification *)notification
 {
+#ifdef WEBSCREEN_DEBUG
+  NSLog(@"[Webscreen AppWrapper] Debug enabled");
+#endif
   self.window.minSize = NSMakeSize(1024, 768);
 }
 
