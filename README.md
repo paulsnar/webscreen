@@ -8,6 +8,14 @@ WebView which doesn't have the sort of performance WKWebView can offer.
 [WKWebView]: https://developer.apple.com/documentation/webkit/wkwebview
 [WebViewScreenSaver]: https://github.com/liquidx/webviewscreensaver
 
+## Usage
+
+* Download `Webscreen.zip` from [the latest release][] and unzip it
+* Double-click on the `Webscreen.saver` file and install it
+* Set the URL you want displayed within the screensaver preferences
+
+[the latest release]: https://github.com/paulsnar/webscreen/releases/latest
+
 ## Development
 
 For developing your screensavers the WebscreenAppWrapper also allows
