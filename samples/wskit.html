@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Webscreen: WSKit sample</title>
+<style>
+  body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 3rem;
+
+    background: linear-gradient(to bottom, #333, #111);
+    color: white;
+
+    font-family: sans-serif;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+</style>
+<article id="js-wskit-output">WSKit loading...</article>
+<script>
+  WSKit.configuration.then((conf) => {
+    let $output = document.getElementById('js-wskit-output')
+    $output.textContent = `monitor ${conf.display} out of ${conf.totalDisplays}`
+  })
+</script>

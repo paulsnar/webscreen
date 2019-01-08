@@ -41,6 +41,8 @@ if there exists a privacy concern due to which you don't want to share your
 monitor count with the webpage. it's probably best to stick with version
 [1.12][] instead.
 
+See the [WSKit sample](./samples/wskit.html) for usage.
+
 [1.12]: https://github.com/paulsnar/webscreen/releases/tag/v1.12
 
 ## Distribution Tips
