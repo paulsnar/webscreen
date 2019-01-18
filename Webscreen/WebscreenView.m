@@ -286,7 +286,8 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
       return;
     }
 
-    NSString* jsonStr = [NSString stringWithUTF8String:json.bytes];
+    NSString* jsonStr = [[NSString alloc]
+      initWithData:json encoding:NSUTF8StringEncoding];
     NSString* invocation = [NSString stringWithFormat:
       @"WSKit.dispatchEvent('configure', %@);", jsonStr];
     [_webView evaluateJavaScript:invocation completionHandler:nil];
