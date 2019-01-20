@@ -94,7 +94,6 @@
       Events.off(name, listener)
     },
     dispatchEvent: function(name, arg) {
-      console.log('[WSKit] event: %s %o', name, arg)
       Events.trigger(name, arg)
     },
   }
