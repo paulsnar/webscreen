@@ -294,6 +294,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.18;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.paulsnar.WebscreenAppWrapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -313,6 +314,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.18;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.paulsnar.WebscreenAppWrapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -434,7 +436,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G7526DGQ9J;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					WEBSCREEN_DEBUG,
@@ -443,6 +445,7 @@
 				);
 				INFOPLIST_FILE = Webscreen/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				MARKETING_VERSION = 1.18;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.paulsnar.Webscreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = saver;
@@ -454,10 +457,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G7526DGQ9J;
 				INFOPLIST_FILE = Webscreen/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				MARKETING_VERSION = 1.18;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.paulsnar.Webscreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = saver;
