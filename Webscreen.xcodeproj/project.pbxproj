@@ -434,6 +434,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = G7526DGQ9J;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					WEBSCREEN_DEBUG,
@@ -453,6 +454,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = G7526DGQ9J;
 				INFOPLIST_FILE = Webscreen/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";

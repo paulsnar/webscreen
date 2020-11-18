@@ -19,7 +19,6 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
 {
   NSUserDefaults* _defaults;
   NSString* _url;
-  NSView* _intermediateView;
   WKWebView* _webView;
   BOOL _animationStarted;
   WSConfigurationPanel* _confPanel;
@@ -57,8 +56,11 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
   _defaults = defaults;
 
   self.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-  self.autoresizesSubviews = YES;
+  self.autoresizesSubviews = NO;
   self.wantsLayer = YES;
+
+  self.bounds = frame;
+  self.frame = frame;
 
   WKWebViewConfiguration* conf = [[WKWebViewConfiguration alloc] init];
   conf.suppressesIncrementalRendering = NO;
@@ -78,16 +80,8 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
   _webView = [[WKWebView alloc] initWithFrame:frame configuration:conf];
   _webView.navigationDelegate = self;
 
-  if (isPreview) {
-    _intermediateView = [[NSView alloc] initWithFrame:NSZeroRect];
-    [_intermediateView addSubview:_webView];
-    [self addSubview:_intermediateView];
-  } else {
-    [self addSubview:_webView];
-  }
-
+  [self addSubview:_webView];
   [self resizeSubviewsWithOldSize:NSZeroSize];
-
   return self;
 }
 
@@ -134,15 +128,8 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
 {
   CGRect bounds = NSRectToCGRect(self.bounds);
   CGAffineTransform transform = CGAffineTransformIdentity;
-  if (self.isPreview) {
-    transform = CGAffineTransformScale(transform, 2.0, 2.0);
-  }
   CGRect childBounds = CGRectApplyAffineTransform(bounds, transform);
 
-  if (_intermediateView != nil) {
-    _intermediateView.frame = bounds;
-    _intermediateView.bounds = childBounds;
-  }
   _webView.frame = childBounds;
 }
 
