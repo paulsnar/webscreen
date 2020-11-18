@@ -16,6 +16,11 @@ WebView which doesn't have the sort of performance WKWebView can offer.
 
 [the latest release]: https://github.com/paulsnar/webscreen/releases/latest
 
+*Note*: I believe I have my code signing in order so you shouldn't get any
+errors or warnings when running this. If you do, please contact me via the email
+available at <https://paulsnar.lv/>. Thanks! (This does not extend to the
+AppWrapper which is, by design, a development tool.)
+
 ## Development
 
 For developing your screensavers the WebscreenAppWrapper also allows
