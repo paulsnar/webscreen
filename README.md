@@ -2,8 +2,10 @@
 
 A simple screensaver, thinly wrapping [WKWebView][].
 
-Inspired by, but shares no code with, [WebViewScreenSaver][], which uses
-WebView which doesn't have the sort of performance WKWebView can offer.
+Inspired by, but shares no code with, [WebViewScreenSaver][], which, when this
+project was created, used WebView, which didn't have the sort of performance
+WKWebView can offer. (Note that this is no longer true so perhaps that might be
+a better choice for you.)
 
 [WKWebView]: https://developer.apple.com/documentation/webkit/wkwebview
 [WebViewScreenSaver]: https://github.com/liquidx/webviewscreensaver
