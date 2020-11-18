@@ -79,6 +79,7 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
 
   _webView = [[WKWebView alloc] initWithFrame:frame configuration:conf];
   _webView.navigationDelegate = self;
+  _webView.alphaValue = 0.0;
 
   [self addSubview:_webView];
   [self resizeSubviewsWithOldSize:NSZeroSize];
@@ -199,7 +200,11 @@ static NSString* const kPlistDefaultUrlKey = @"WSDefaultURL";
 {
   if (_webView.alphaValue < 1.0) {
     WKWebView* animator = [_webView animator];
-    animator.alphaValue = 1.0;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 500 * NSEC_PER_MSEC),
+                   dispatch_get_main_queue(),
+                   ^(void) {
+      animator.alphaValue = 1.0;
+    });
   }
 }
 
